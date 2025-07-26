@@ -61,9 +61,6 @@ def generate (args, pipe, input_image, instruction, seed):
     
     return res
 
-def get_best_output_from_various_seeds(args, pipe, image, instruction, seed):
-    pass
-
 def main():
     parser = ArgumentParser()
     
@@ -162,7 +159,6 @@ def main():
                     image.save (os.path.join(args.output_dir, f'{img_key}-input.png'))
                 
                 for key in res.keys():
-                    import pdb; pdb.set_trace()
                     res[key].save (os.path.join(args.output_dir, f'{img_key}-{key}-seed{seed}.png'))
 
                 
