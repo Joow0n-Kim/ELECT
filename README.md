@@ -48,7 +48,7 @@ pip install -r requirements.txt
 - git clone https://github.com/cientgu/InstructDiffusion
 - Download `v1-5-pruned-emaonly-adaption-task.ckpt` from that repo and move it to `./checkpoints`.
 
-4. (Optional) Use **InstructDiffusion**
+4. (Optional) Use **MGIE**
 - Follow the [MGIE setup guide](https://github.com/apple/ml-mgie).  
 - Place the official [LLaVA-Lightning-7B](https://huggingface.co/liuhaotian/LLaVA-Lightning-7B-delta-v1-1) in `./checkpoints/LLaVA-7B-v1`.  
 - Put `mllm.pt` and `unet.pt` in `./checkpoints/mgie_7b`.
