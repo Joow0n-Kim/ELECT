@@ -94,12 +94,19 @@ python inference.py \
     - _select_one_seed_: If set, select the best seed from the candidate seeds based on background inconsistency scores.
     - _num_random_candidates_: Number of random candidate seeds to be used for inference. (random seeds)
     - _candidate_seeds_: List of candidate seeds for fixed seed inference. (if num_random_candidates is 0, this will be used)
-    - _stopping_step_: The step at which to select the best seed. (default=40) (when ddim_steps
-    - _first_step_for_mask_extraction_: The first step for relevance mask extraction. This is used to accumulate the relevance map.
-    - _last_step_for_mask_extraction_: The last step for relevance mask extraction. This is used to accumulate the relevance map.
+    - _stopping_step_: The step at which to select the best seed. (default=40) (assuming --inference_step 100; scale proportionally if you use a different total number of inference steps)
+    - _first_step_for_mask_extraction_: The first step for relevance mask extraction. This is used to accumulate the relevance map. (default=0)
+    - _last_step_for_mask_extraction_: The last step for relevance mask extraction. This is used to accumulate the relevance map. (default=20)
     - _visualize_all_seeds_: If set, visualize all seeds' outputs. Otherwise, only the best seed's output is visualized.
 
-
+    - _output_dir_: Directory where edited images are saved (default: `./outputs`).
+        - If **`visualize_all_seeds` is _not_ set**, the result is saved as  
+          `{input_name}_output_{selected_seed}.png`.
+        - If **`visualize_all_seeds` _is_ set**, every seed’s output is saved as  
+          `{input_name}_output_{seed}.png`, and the elected one is additionally stored as  
+          `{input_name}_output-best_seed-{seed}.png`.
+        - The relevance map used for the Background Inconsistency Score is saved as  
+          `{input_name}_output-mask.png`.
 ### Todos
 - [x] Release implementation code for seed selection
 - [ ] Release implementation code for prompt selection
