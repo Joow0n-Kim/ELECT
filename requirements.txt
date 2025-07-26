@@ -1,0 +1,13 @@
+torch
+numpy>=1.24,<2.0
+pillow
+tqdm
+omegaconf
+opencv-python-headless
+matplotlib
+einops
+k-diffusion>=0.1.1
+
+transformers==4.41.2
+diffusers==0.31.0
+accelerate>=0.26  
